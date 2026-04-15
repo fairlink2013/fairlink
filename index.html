@@ -650,31 +650,65 @@ function toast(msg){
 }
 
 
-// ── GAS連携 ──
+// ── GAS連携（GET + URLパラメーター方式・CORS回避）──
 const GAS_URL = 'https://script.google.com/a/macros/fairlink.co.jp/s/AKfycbzdfpeX-InkAUy_h9Mvj9jJrRd7nCs2QCnSZvH7nN6FSsN5XDG1SilKFUb7cfPFPhyS/exec';
+
+// GETでデータ取得（jsonpコールバック方式）
+function gasGet(params) {
+  return new Promise((resolve) => {
+    const cbName = 'cb_' + Date.now();
+    const url = GAS_URL + '?' + new URLSearchParams({...params, callback: cbName});
+    const script = document.createElement('script');
+    window[cbName] = (data) => {
+      resolve(data);
+      delete window[cbName];
+      document.head.removeChild(script);
+    };
+    script.onerror = () => { resolve(null); delete window[cbName]; try{document.head.removeChild(script);}catch(e){} };
+    script.src = url;
+    document.head.appendChild(script);
+  });
+}
+
+// GETでデータ送信（データをBase64エンコードして送る）
+function gasPost(params) {
+  return new Promise((resolve) => {
+    const cbName = 'cb_' + Date.now();
+    const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(params))));
+    const url = GAS_URL + '?callback=' + cbName + '&data=' + encodeURIComponent(encoded);
+    const script = document.createElement('script');
+    window[cbName] = (data) => {
+      resolve(data);
+      delete window[cbName];
+      document.head.removeChild(script);
+    };
+    script.onerror = () => { resolve(null); delete window[cbName]; try{document.head.removeChild(script);}catch(e){} };
+    script.src = url;
+    document.head.appendChild(script);
+  });
+}
 
 async function fetchFaqs(){
   try{
-    const res = await fetch(GAS_URL + '?action=getFaqs');
-    const d = await res.json();
-    if(d.faqs && d.faqs.length > 0){
+    const d = await gasGet({action:'getFaqs'});
+    if(d && d.faqs && d.faqs.length > 0){
       state.faqs = d.faqs;
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
       renderFaqs();
       updateStats();
+      toast('✅ スプレッドシートからFAQを読み込みました');
     }
   }catch(e){ console.warn('GAS fetch failed:', e); }
 }
 
 async function pushFaqs(){
   try{
-    const res = await fetch(GAS_URL, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({action:'saveFaqs', faqs:state.faqs})
-    });
-    const d = await res.json();
-    if(d.success) toast('✅ スプレッドシートに保存しました（' + state.faqs.filter(f=>f.status==='ok').length + '件）');
+    const d = await gasPost({action:'saveFaqs', faqs:state.faqs});
+    if(d && d.success){
+      toast('✅ スプレッドシートに保存しました（' + state.faqs.filter(f=>f.status==='ok').length + '件）');
+    } else {
+      toast('⚠️ スプレッドシートへの保存に失敗しました');
+    }
   }catch(e){
     console.warn('GAS push failed:', e);
     toast('⚠️ スプレッドシートへの保存に失敗しました');
@@ -683,11 +717,7 @@ async function pushFaqs(){
 
 async function logQuestion(question, answer){
   try{
-    await fetch(GAS_URL, {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({action:'logQuestion', log:{question, answer, page:'admin-test'}})
-    });
+    await gasPost({action:'logQuestion', log:{question, answer, page:'admin-test'}});
   }catch(e){ console.warn('GAS log failed:', e); }
 }
 
