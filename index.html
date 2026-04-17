@@ -16,7 +16,6 @@
 }
 body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;background:var(--bg);min-height:100vh;color:var(--text);}
 
-/* ── LOGIN ── */
 #login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;}
 .login-card{background:white;border:1px solid var(--border);border-radius:16px;padding:36px 32px;width:100%;max-width:360px;text-align:center;box-shadow:0 4px 24px rgba(10,46,92,.08);}
 .login-logo{width:52px;height:52px;background:var(--navy);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;}
@@ -25,12 +24,11 @@ body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;b
 .login-card p{font-size:12px;color:var(--muted);margin-bottom:24px;}
 .login-field{width:100%;border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:14px;font-family:inherit;outline:none;color:var(--text);margin-bottom:10px;}
 .login-field:focus{border-color:var(--navy3);}
-.login-btn{width:100%;background:var(--navy);color:white;border:none;border-radius:8px;padding:11px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s;}
+.login-btn{width:100%;background:var(--navy);color:white;border:none;border-radius:8px;padding:11px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;}
 .login-btn:hover{background:var(--navy3);}
 .login-err{color:var(--red);font-size:12px;margin-top:8px;display:none;}
 .login-hint{font-size:11px;color:var(--muted);margin-top:12px;}
 
-/* ── LAYOUT ── */
 #admin-screen{display:none;min-height:100vh;flex-direction:column;}
 .topbar{background:var(--navy);padding:0 24px;height:56px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;}
 .topbar-logo{width:32px;height:32px;background:var(--navy3);border-radius:8px;display:flex;align-items:center;justify-content:center;}
@@ -38,26 +36,24 @@ body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;b
 .topbar-title{font-size:14px;font-weight:700;color:white;flex:1;}
 .topbar-badge{background:rgba(255,255,255,.15);color:white;font-size:11px;padding:3px 10px;border-radius:20px;}
 .logout-btn{background:none;border:1px solid rgba(255,255,255,.25);border-radius:8px;color:rgba(255,255,255,.7);padding:5px 12px;font-size:12px;cursor:pointer;font-family:inherit;}
-.logout-btn:hover{border-color:rgba(255,255,255,.5);color:white;}
+.logout-btn:hover{color:white;border-color:rgba(255,255,255,.5);}
 
 .sidebar{width:200px;background:white;border-right:1px solid var(--border);padding:16px 0;position:fixed;top:56px;left:0;bottom:0;overflow-y:auto;}
-.nav-section{padding:8px 16px 4px;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;}
+.nav-section{padding:8px 16px 4px;font-size:10px;font-weight:700;color:var(--muted);letter-spacing:.08em;}
 .nav-item{display:flex;align-items:center;gap:8px;padding:9px 16px;font-size:13px;color:var(--text);cursor:pointer;transition:all .15s;border-left:3px solid transparent;}
 .nav-item:hover{background:var(--pale);color:var(--navy);}
 .nav-item.active{background:var(--pale);color:var(--navy);border-left-color:var(--navy3);font-weight:600;}
 .nav-icon{font-size:15px;width:20px;text-align:center;}
 
 .main{margin-left:200px;padding:28px;min-height:calc(100vh - 56px);}
-.page{display:none;}
-.page.active{display:block;}
+.page{display:none;}.page.active{display:block;}
 .page-title{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:4px;}
 .page-sub{font-size:13px;color:var(--muted);margin-bottom:24px;}
 
-/* ── CARDS ── */
 .card{background:white;border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
-.card-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.card-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:14px;}
 
-/* ── TEST CHAT ── */
+/* CHAT */
 .chat-wrap{display:flex;gap:16px;align-items:flex-start;}
 .chat-box{flex:1;background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
 .chat-msgs{min-height:260px;max-height:320px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;}
@@ -76,31 +72,30 @@ body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;b
 .chat-input{flex:1;border:1px solid var(--border);border-radius:20px;padding:7px 14px;font-size:13px;outline:none;font-family:inherit;color:var(--text);}
 .chat-input:focus{border-color:var(--navy3);}
 .chat-send{background:var(--navy);color:white;border:none;border-radius:50%;width:34px;height:34px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.chat-send:hover{background:var(--navy3);}
 .chat-send svg{width:15px;height:15px;fill:white;}
 
-/* correction panel */
 .correction-panel{width:280px;background:var(--yellow-bg);border:1px solid #fde68a;border-radius:10px;padding:14px;}
 .correction-panel h4{font-size:13px;font-weight:700;color:var(--yellow-fg);margin-bottom:10px;}
 .corr-label{font-size:11px;font-weight:600;color:var(--navy);margin-bottom:4px;margin-top:10px;}
-.corr-label:first-of-type{margin-top:0;}
 .corr-textarea{width:100%;border:1px solid var(--border);border-radius:6px;padding:7px 10px;font-size:12px;font-family:inherit;resize:none;outline:none;color:var(--text);background:white;}
-.corr-textarea:focus{border-color:var(--navy3);}
 .corr-btn{width:100%;background:var(--navy);color:white;border:none;border-radius:8px;padding:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;margin-top:10px;}
 .corr-btn:hover{background:var(--navy3);}
 .corr-hint{font-size:10px;color:var(--yellow-fg);margin-top:6px;line-height:1.5;}
 
-/* ── FAQ LIST ── */
+/* STATS */
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
+.stat-card{background:white;border:1px solid var(--border);border-radius:10px;padding:14px;}
+.stat-num{font-size:26px;font-weight:700;color:var(--navy);}
+.stat-label{font-size:11px;color:var(--muted);margin-top:2px;}
+
+/* FAQ */
 .faq-toolbar{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
 .add-btn{background:var(--navy);color:white;border:none;border-radius:8px;padding:7px 14px;font-size:12px;cursor:pointer;font-family:inherit;}
-.add-btn:hover{background:var(--navy3);}
 .search-input{flex:1;border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:13px;outline:none;font-family:inherit;color:var(--text);}
-.search-input:focus{border-color:var(--navy3);}
-.faq-item{background:white;border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:8px;transition:border-color .15s;}
+.faq-item{background:white;border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:8px;}
 .faq-item:hover{border-color:var(--navy4);}
 .faq-item-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px;}
 .faq-q{flex:1;font-size:13px;font-weight:600;color:var(--navy);}
-.faq-badges{display:flex;gap:6px;flex-shrink:0;}
 .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;}
 .badge.ok{background:var(--green-bg);color:var(--green-fg);}
 .badge.warn{background:var(--yellow-bg);color:var(--yellow-fg);}
@@ -109,59 +104,53 @@ body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;b
 .faq-actions{display:flex;gap:6px;}
 .faq-edit-btn{background:var(--pale);border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:11px;color:var(--navy2);cursor:pointer;font-family:inherit;}
 .faq-del-btn{background:none;border:1px solid #fca5a5;border-radius:6px;padding:4px 10px;font-size:11px;color:var(--red);cursor:pointer;font-family:inherit;}
-.faq-edit-btn:hover{background:var(--navy);color:white;border-color:var(--navy);}
-.faq-del-btn:hover{background:var(--red-bg);}
 
-/* edit modal */
+/* LOG */
+.log-table{width:100%;border-collapse:collapse;font-size:12px;}
+.log-table th{background:var(--navy);color:white;padding:8px 10px;text-align:left;font-size:11px;}
+.log-table td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:top;}
+.log-table tr:nth-child(even) td{background:var(--pale);}
+.log-table tr:hover td{background:#dbeafe;}
+.client-badge{display:inline-block;background:var(--navy);color:white;border-radius:6px;padding:2px 8px;font-size:10px;}
+.filter-row{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;}
+.filter-input{border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:12px;outline:none;font-family:inherit;color:var(--text);}
+
+/* MODAL */
 .modal-bg{position:fixed;inset:0;background:rgba(10,46,92,.35);display:none;align-items:center;justify-content:center;z-index:200;padding:20px;}
 .modal-bg.open{display:flex;}
 .modal{background:white;border-radius:14px;padding:24px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;}
 .modal h3{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:16px;}
 .field-label{font-size:12px;font-weight:600;color:var(--navy);margin-bottom:4px;margin-top:12px;}
-.field-label:first-of-type{margin-top:0;}
 .field{width:100%;border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:13px;font-family:inherit;color:var(--text);outline:none;resize:none;}
-.field:focus{border-color:var(--navy3);}
 .modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:16px;}
 .modal-cancel{background:none;border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;cursor:pointer;font-family:inherit;color:var(--muted);}
 .modal-save{background:var(--navy);color:white;border:none;border-radius:8px;padding:8px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
-.modal-save:hover{background:var(--navy3);}
 
-/* ── SETTINGS ── */
+/* SETTINGS */
 .setting-row{margin-bottom:14px;}
 .setting-label{font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px;}
 .setting-input{width:100%;border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:13px;font-family:inherit;color:var(--text);outline:none;}
-.setting-input:focus{border-color:var(--navy3);}
 .setting-hint{font-size:11px;color:var(--muted);margin-top:3px;}
 .api-status{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted);margin-top:5px;}
 .api-dot{width:7px;height:7px;border-radius:50%;background:#d1d5db;}
 .api-dot.ok{background:var(--green);}
-.save-btn{background:var(--navy);color:white;border:none;border-radius:8px;padding:9px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;transition:background .2s;}
-.save-btn:hover{background:var(--navy3);}
-.export-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;cursor:pointer;font-family:inherit;color:var(--navy2);margin-left:8px;}
-.export-btn:hover{background:var(--pale);}
+.save-btn{background:var(--navy);color:white;border:none;border-radius:8px;padding:9px 20px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;}
 
-/* ── TOAST ── */
+/* PW */
+.pw-msg{font-size:12px;margin:8px 0;display:none;}
+
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--navy);color:white;padding:8px 20px;border-radius:20px;font-size:13px;z-index:999;pointer-events:none;opacity:0;transition:opacity .3s;}
 .toast.show{opacity:1;}
 
-/* ── STAT CARDS ── */
-.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
-.stat-card{background:white;border:1px solid var(--border);border-radius:10px;padding:14px;}
-.stat-num{font-size:26px;font-weight:700;color:var(--navy);}
-.stat-label{font-size:11px;color:var(--muted);margin-top:2px;}
-
 @media(max-width:640px){
-  .sidebar{display:none;}
-  .main{margin-left:0;}
-  .chat-wrap{flex-direction:column;}
-  .correction-panel{width:100%;}
+  .sidebar{display:none;}.main{margin-left:0;}
+  .chat-wrap{flex-direction:column;}.correction-panel{width:100%;}
   .stats-grid{grid-template-columns:1fr 1fr;}
 }
 </style>
 </head>
 <body>
 
-<!-- LOGIN -->
 <div id="login-screen">
   <div class="login-card">
     <div class="login-logo"><svg viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg></div>
@@ -170,44 +159,43 @@ body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;b
     <input class="login-field" type="password" id="pw" placeholder="パスワードを入力" onkeydown="if(event.key==='Enter')login()"/>
     <button class="login-btn" onclick="login()">ログイン</button>
     <div class="login-err" id="login-err">パスワードが違います</div>
-    <p class="login-hint">初期パスワード：admin1234<br>ログイン後に変更できます</p>
+    <p class="login-hint">初期PW：admin1234　ログイン後に変更できます</p>
   </div>
 </div>
 
-<!-- ADMIN -->
 <div id="admin-screen">
   <div class="topbar">
     <div class="topbar-logo"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
     <span class="topbar-title">りくる for クリニック｜管理パネル</span>
-    <span class="topbar-badge" id="faq-count-badge">FAQ 0件</span>
+    <span class="topbar-badge" id="faq-count-badge">FAQ 読込中...</span>
     <button class="logout-btn" onclick="logout()">ログアウト</button>
   </div>
-
   <div style="display:flex;flex:1;">
     <div class="sidebar">
       <div class="nav-section">テスト・修正</div>
       <div class="nav-item active" onclick="showPage('test')" id="nav-test"><span class="nav-icon">💬</span>回答テスト</div>
       <div class="nav-item" onclick="showPage('faq')" id="nav-faq"><span class="nav-icon">📋</span>FAQ管理</div>
+      <div class="nav-section">ログ・分析</div>
+      <div class="nav-item" onclick="showPage('logs')" id="nav-logs"><span class="nav-icon">📊</span>質問ログ</div>
       <div class="nav-section">設定</div>
       <div class="nav-item" onclick="showPage('settings')" id="nav-settings"><span class="nav-icon">🔑</span>API・Bot設定</div>
       <div class="nav-item" onclick="showPage('password')" id="nav-password"><span class="nav-icon">🔐</span>パスワード変更</div>
     </div>
-
     <div class="main">
 
-      <!-- ① 回答テスト -->
+      <!-- 回答テスト -->
       <div class="page active" id="page-test">
         <div class="page-title">💬 回答テスト・修正</div>
-        <div class="page-sub">Botに質問して回答を確認。違う部分があれば右側のパネルで修正してFAQに登録します。</div>
+        <div class="page-sub">Botに質問して回答を確認。違う部分があれば右パネルで修正してFAQに登録します。</div>
         <div class="stats-grid">
-          <div class="stat-card"><div class="stat-num" id="stat-faq">0</div><div class="stat-label">登録FAQ数</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-active">0</div><div class="stat-label">有効FAQ数</div></div>
-          <div class="stat-card"><div class="stat-num" id="stat-tests">0</div><div class="stat-label">今日のテスト回数</div></div>
+          <div class="stat-card"><div class="stat-num" id="stat-faq">-</div><div class="stat-label">登録FAQ数</div></div>
+          <div class="stat-card"><div class="stat-num" id="stat-active">-</div><div class="stat-label">有効FAQ数</div></div>
+          <div class="stat-card"><div class="stat-num" id="stat-logs">-</div><div class="stat-label">累計質問数</div></div>
         </div>
         <div class="chat-wrap">
           <div class="chat-box">
             <div class="chat-msgs" id="chat-msgs">
-              <div class="msg b"><div class="av b">AI</div><div class="bbl">こんにちは！テスト用のBotです。質問して回答を確認してください。右パネルで修正内容を入力するとFAQに登録されます。</div></div>
+              <div class="msg b"><div class="av b">AI</div><div class="bbl">こんにちは！テスト用Botです。質問して回答を確認してください。右パネルで修正するとFAQに登録されます。</div></div>
             </div>
             <div class="chat-input-row">
               <input class="chat-input" id="chat-input" placeholder="テスト質問を入力..." onkeydown="if(event.key==='Enter')testSend()"/>
@@ -223,27 +211,43 @@ body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;b
             <div class="corr-label">✅ 正しい回答</div>
             <textarea class="corr-textarea" id="corr-good" rows="4" placeholder="正しい回答を入力してください"></textarea>
             <button class="corr-btn" onclick="registerCorrection()">FAQに登録する</button>
-            <div class="corr-hint">登録した内容は次回からAIが優先的に参照し、回答精度が上がります。</div>
+            <div class="corr-hint">登録した内容は次回からAIが優先的に参照します。</div>
           </div>
         </div>
       </div>
 
-      <!-- ② FAQ管理 -->
+      <!-- FAQ管理 -->
       <div class="page" id="page-faq">
         <div class="page-title">📋 FAQ管理</div>
-        <div class="page-sub">登録されたFAQの一覧です。有効なFAQのみAIが参照します。</div>
+        <div class="page-sub">Supabaseに保存されたFAQ一覧です。複数人で共同編集できます。</div>
         <div class="faq-toolbar">
           <button class="add-btn" onclick="openModal(-1)">＋ 新規追加</button>
-          <input class="search-input" placeholder="キーワードで検索..." oninput="filterFaqs(this.value)"/>
-          <button class="export-btn" onclick="exportFaqs()">📥 エクスポート</button>
+          <input class="search-input" placeholder="キーワードで検索..." oninput="renderFaqs(this.value)"/>
         </div>
-        <div id="faq-list"></div>
+        <div id="faq-list"><div style="text-align:center;padding:32px;color:var(--muted);">読込中...</div></div>
       </div>
 
-      <!-- ③ API・Bot設定 -->
+      <!-- 質問ログ -->
+      <div class="page" id="page-logs">
+        <div class="page-title">📊 質問ログ</div>
+        <div class="page-sub">クライアントからの質問履歴です。client_idでクライアントごとに絞り込めます。</div>
+        <div class="filter-row">
+          <input class="filter-input" id="log-filter-client" placeholder="クライアントIDで絞り込み..." oninput="renderLogs()"/>
+          <input class="filter-input" id="log-filter-q" placeholder="質問キーワードで絞り込み..." oninput="renderLogs()"/>
+          <button class="add-btn" onclick="loadLogs()">🔄 更新</button>
+        </div>
+        <div style="overflow-x:auto;">
+          <table class="log-table" id="log-table">
+            <thead><tr><th>日時</th><th>クライアントID</th><th>質問</th><th>回答（先頭80字）</th></tr></thead>
+            <tbody id="log-body"><tr><td colspan="4" style="text-align:center;padding:20px;color:var(--muted);">読込中...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- API設定 -->
       <div class="page" id="page-settings">
         <div class="page-title">🔑 API・Bot設定</div>
-        <div class="page-sub">OpenAI APIキーとBotの基本情報を設定します。</div>
+        <div class="page-sub">OpenAI APIキーとBotの基本情報を設定します。ブラウザに保存されます。</div>
         <div class="card">
           <div class="card-title">OpenAI API</div>
           <div class="setting-row">
@@ -271,31 +275,21 @@ body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;b
           </div>
           <div class="setting-row">
             <div class="setting-label">システムプロンプト</div>
-            <textarea class="setting-input" id="prompt-input" rows="5" style="resize:vertical;">あなたはClinicsideが提供する「りくる for クリニック」のAIアシスタントです。クリニックの院長・採用担当者に向けて、丁寧かつ簡潔な日本語でお答えください。採用代行・人事サービスに関する質問に専門的にお答えし、料金を聞かれた場合は必ず[TABLE]を含めて回答してください。わからないことは「担当者よりご連絡します」と案内してください。</textarea>
-            <div class="setting-hint">※ {company} は会社名に自動置換されます</div>
+            <textarea class="setting-input" id="prompt-input" rows="6" style="resize:vertical;">あなたはClinicside株式会社が提供する「りくる for クリニック」のAIアシスタントです。クリニックの院長・採用担当者に向けて、丁寧かつ簡潔な日本語でお答えください。採用代行・人事サービスに関する質問に専門的にお答えし、料金を聞かれた場合は必ず[TABLE]を含めて回答してください。わからないことは「担当者よりご連絡します（rikuru@support.co.jp）」と案内してください。</textarea>
           </div>
         </div>
         <button class="save-btn" onclick="saveSettings()">✓ 設定を保存する</button>
       </div>
 
-      <!-- ④ パスワード変更 -->
+      <!-- パスワード変更 -->
       <div class="page" id="page-password">
         <div class="page-title">🔐 パスワード変更</div>
         <div class="page-sub">管理者ログインのパスワードを変更します。</div>
         <div class="card" style="max-width:400px;">
-          <div class="setting-row">
-            <div class="setting-label">現在のパスワード</div>
-            <input class="setting-input" type="password" id="cur-pw" placeholder="現在のパスワード"/>
-          </div>
-          <div class="setting-row">
-            <div class="setting-label">新しいパスワード（6文字以上）</div>
-            <input class="setting-input" type="password" id="new-pw" placeholder="新しいパスワード"/>
-          </div>
-          <div class="setting-row">
-            <div class="setting-label">確認（もう一度入力）</div>
-            <input class="setting-input" type="password" id="new-pw2" placeholder="もう一度入力"/>
-          </div>
-          <div id="pw-msg" style="font-size:12px;margin:8px 0;display:none;"></div>
+          <div class="setting-row"><div class="setting-label">現在のパスワード</div><input class="setting-input" type="password" id="cur-pw"/></div>
+          <div class="setting-row"><div class="setting-label">新しいパスワード（6文字以上）</div><input class="setting-input" type="password" id="new-pw"/></div>
+          <div class="setting-row"><div class="setting-label">確認</div><input class="setting-input" type="password" id="new-pw2"/></div>
+          <div id="pw-msg" class="pw-msg"></div>
           <button class="save-btn" onclick="changePw()">パスワードを変更する</button>
         </div>
       </div>
@@ -304,14 +298,14 @@ body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;b
   </div>
 </div>
 
-<!-- FAQ EDIT MODAL -->
+<!-- FAQ MODAL -->
 <div class="modal-bg" id="modal-bg">
   <div class="modal">
     <h3 id="modal-title">FAQ を追加</h3>
     <div class="field-label">質問</div>
-    <textarea class="field" id="modal-q" rows="2" placeholder="想定される質問を入力"></textarea>
+    <textarea class="field" id="modal-q" rows="2"></textarea>
     <div class="field-label">✅ 正しい回答</div>
-    <textarea class="field" id="modal-a" rows="5" placeholder="正しい回答を入力"></textarea>
+    <textarea class="field" id="modal-a" rows="5"></textarea>
     <div class="field-label">カテゴリ</div>
     <input class="field" id="modal-cat" placeholder="例：料金、採用職種、導入フロー"/>
     <div class="field-label">ステータス</div>
@@ -330,267 +324,260 @@ body{font-family:'Hiragino Kaku Gothic Pro','Yu Gothic UI','Meiryo',sans-serif;b
 <div class="toast" id="toast"></div>
 
 <script>
+// ── Supabase設定 ──
+const SB_URL  = 'https://ngbitfqilnvqpjoqqtdr.supabase.co';
+const SB_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5nYml0ZnFpbG52cXBqb3FxdGRyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzY0MTIyMDEsImV4cCI6MjA5MTk4ODIwMX0.-GWOH1e_gIsZsRwpVQhVc9k2L5dxsDTINSNZzjjfvUw';
+const SB_HDR  = { 'Content-Type':'application/json', 'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY };
+
+async function sbGet(table, params='') {
+  const r = await fetch(SB_URL + '/rest/v1/' + table + '?order=id.asc' + params, { headers: SB_HDR });
+  return r.json();
+}
+async function sbInsert(table, data) {
+  const r = await fetch(SB_URL + '/rest/v1/' + table, {
+    method:'POST', headers:{...SB_HDR, 'Prefer':'return=representation'}, body: JSON.stringify(data)
+  });
+  return r.json();
+}
+async function sbUpdate(table, id, data) {
+  const r = await fetch(SB_URL + '/rest/v1/' + table + '?id=eq.' + id, {
+    method:'PATCH', headers:{...SB_HDR, 'Prefer':'return=representation'}, body: JSON.stringify(data)
+  });
+  return r.json();
+}
+async function sbDelete(table, id) {
+  await fetch(SB_URL + '/rest/v1/' + table + '?id=eq.' + id, { method:'DELETE', headers: SB_HDR });
+}
+async function sbCount(table) {
+  const r = await fetch(SB_URL + '/rest/v1/' + table + '?select=id', {
+    headers: {...SB_HDR, 'Prefer':'count=exact', 'Range':'0-0'}
+  });
+  return parseInt(r.headers.get('content-range')?.split('/')[1] || '0');
+}
+
 // ── STATE ──
-const STORAGE_KEY = 'hr_bot_admin';
+const LS_KEY = 'rikuru_admin_v2';
 let state = {
   password: 'admin1234',
-  apiKey: '',
-  model: 'gpt-4o-mini',
-  company: 'Clinicside株式会社（りくる for クリニック）',
+  apiKey: '', model: 'gpt-4o-mini',
+  company: 'Clinicside株式会社',
   botName: 'りくる for クリニック AI',
-  prompt: `あなたはClinicside株式会社が提供する「りくる for クリニック」のAIアシスタントです。
-クリニック・医療機関の院長・採用担当者に向けて、丁寧かつ簡潔な日本語でお答えください。
-
-【サービス概要】
-Clinicside株式会社（旧社名：フェアリンク株式会社）が提供するクリニック専門の採用代行サービスです。
-採用媒体の管理・求人票作成・スカウト送信・応募者対応・面接日調整・合否連絡・入社前フォローまで採用に関わるあらゆる業務を代行します。
-別事業では事務長として160名以上の職員を管理しており、現場目線のノウハウが強みです。
-
-【3つの強み】
-1. 入社後のミスマッチを減らす採用：事務長として開業時の面接から入社後フォロー（1on1面談）を経験しているため、ミスマッチに気づく力がある
-2. クリニックの強みを訴求できるPR文章の提案：様々なクリニックの現場を見てきた経験からクリニックごとの強みを発見できる
-3. 継続的な関係性の構築：採用をゴールとせず、早期離職なく活躍してもらうことを目指す
-
-【実績（2023年1月〜12月）】
-・辞退率：16%（業界平均より大幅に低い）
-・月の応募者数平均：約50名（1クリニックあたり）
-・面接後採用率：56%（面接者の約半数以上が採用につながる）
-
-【料金を聞かれた場合】必ず[TABLE]を含めて回答してください。
-
-【わからないことは】「担当者よりご連絡いたします。お気軽にお問い合わせください（rikuru@support.co.jp）」と案内してください。
-
-【注意事項】
-・医療診断や法的判断は行わない
-・競合他社を貶めない
-・価格は積極的に開示してOK`,
-  faqs: [
-        {id:1, q:'りくる for クリニックとはどんなサービスですか？', a:'Clinicside株式会社が提供するクリニック専門の採用代行サービスです。求人票作成・スカウト送信・応募者対応・面接日調整・合否連絡・入社前フォローまで採用に関わるあらゆる業務を代行します。院長やスタッフは面接・合否判断・雇用条件のすり合わせといった重要な意思決定業務に集中できます。', cat:'サービス概要', status:'ok'},
-    {id:2, q:'料金プランを教えてください', a:'初期費用0円で月額5万円から対応可能です。3つのプランをご用意しています。[TABLE]最低3ヶ月契約となります。プラン内容はご施設の状況に応じて相談可能です。', cat:'料金・費用', status:'ok'},
-    {id:3, q:'ライトプランとスタンダードプランの違いは何ですか？', a:'ライトプランは1職種1媒体のみ対応で、お試しで始めたい施設様向けです（¥50,000/月）。スタンダードプランは採用業務を幅広くお任せいただけます（¥100,000/月）。プレミアムプランはより専門的な採用業務まで対応します（¥300,000/月）。いずれも初期費用0円です。', cat:'料金・費用', status:'ok'},
-    {id:4, q:'どんな業務を代行してもらえますか？', a:'採用課題の洗い出し・スカウト文面作成・スカウト送信・求人情報作成・掲載・応募者申込窓口・面接日調整・一次面接（Web）・面接（対面）・応募者との条件交渉・合否連絡・適性検査実施・入社前フォロー・履歴書データ化・採用結果分析・毎月のレポートまで対応しています。', cat:'サービス内容', status:'ok'},
-    {id:5, q:'他社の採用代行と何が違いますか？', a:'3つの強みがあります。①入社後のミスマッチを減らす採用：事務長として開業時の面接から入社後フォロー（1on1面談）を経験しているため現場目線で採用できます。②クリニックの強みを訴求できるPR文章の提案：様々なクリニックの現場を見てきた経験からクリニックごとの強みを発見・訴求できます。③継続的な関係性の構築：採用をゴールとせず、早期離職なく活躍してもらうことを目指します。', cat:'差別化', status:'ok'},
-    {id:6, q:'採用実績を教えてください', a:'2023年1月〜12月の実績として、辞退率16%・月の応募者数平均約50名（1クリニックあたり）・面接後採用率56%を達成しています。面接前に勤務条件を細かく確認することで無駄な面接を減らし、面接者の約半数以上が採用につながっています。', cat:'実績', status:'ok'},
-    {id:7, q:'応募者がなかなか集まらないのですが', a:'毎週スカウトを実施し、適宜求人票の見直しを行うなど細やかな対応をしています。また、求人媒体の検索順位を毎回チェックし、職種ごとに最適な媒体を選定します。給与設定も近隣の相場調査をもとに適正価格でご提案します。応募者数平均は月約50名（1クリニックあたり）の実績があります。', cat:'課題解決', status:'ok'},
-    {id:8, q:'応募者との連絡が途切れたり辞退が多いのですが', a:'応募者との迅速なメッセージのやり取りと応募者シート管理により漏れをなくし、辞退を防ぎます。辞退率の実績は16%です。応募者対応のプロが担当するため、連絡漏れがなくなります。', cat:'課題解決', status:'ok'},
-    {id:9, q:'無駄な面接が多くて院長の時間が取られています', a:'面接前に勤務条件を細かく確認する「面接前シート」を活用することで、条件が合わない応募者を事前に見極め、無駄な面接を大幅に削減できます。面接後採用率56%の実績があります。', cat:'課題解決', status:'ok'},
-    {id:10, q:'導入までの流れを教えてください', a:'①メールでお問い合わせ（rikuru@support.co.jp）→ ②プランのご相談（お客様に合ったプランのご提案・内容のすり合わせ）→ ③ご契約・ご利用開始、という流れです。こちらからの不要な電話や営業はありませんのでご安心ください。', cat:'導入フロー', status:'ok'},
-    {id:11, q:'契約期間はどのくらいですか？', a:'最低3ヶ月契約となっています。初期費用は0円です。プランやご状況によってご相談可能ですので、まずはお気軽にお問い合わせください。', cat:'契約・料金', status:'ok'},
-    {id:12, q:'採用以外の業務も相談できますか？', a:'はい、時間単価制の個別業務にも対応しています。給与調査・雇用契約書作成・HP作成・採用ページ作成・経営データ分析・リハビリ生産性向上アドバイスなど幅広く対応可能です。時間単価は5,000円〜となっています。', cat:'その他サービス', status:'ok'},
-    {id:13, q:'問い合わせ先を教えてください', a:'メールでのお問い合わせをお願いしています。メールアドレス：rikuru@support.co.jp　電話：050-5536-3299（土日祝日を除く）　住所：〒182-0024 東京都調布市布田一丁目32番5号 マートルコート調布306号室', cat:'問い合わせ', status:'ok'},
-  ],
-  testCount: 0,
+  prompt: `あなたはClinicside株式会社が提供する「りくる for クリニック」のAIアシスタントです。クリニックの院長・採用担当者に向けて、丁寧かつ簡潔な日本語でお答えください。採用代行・人事サービスに関する質問に専門的にお答えし、料金を聞かれた場合は必ず[TABLE]を含めて回答してください。わからないことは「担当者よりご連絡します（rikuru@support.co.jp）」と案内してください。`
 };
-let editIdx = -1;
+let allFaqs = [];
+let allLogs = [];
+let editFaqId = null;
 let chatHistory = [];
 
-function loadState(){
-  // まずlocalStorageから読み込む（オフライン時のフォールバック）
-  try{
-    const s = localStorage.getItem(STORAGE_KEY);
-    if(s){ const ls = JSON.parse(s); state = {...state, ...ls}; }
-  }catch(e){}
-  // GASから最新FAQを取得
-  fetchFaqs();
+function loadLocalState() {
+  try { const s = localStorage.getItem(LS_KEY); if(s) state = {...state, ...JSON.parse(s)}; } catch(e) {}
 }
-function saveState(){
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  // GASにも保存
-  pushFaqs();
-}
+function saveLocalState() { localStorage.setItem(LS_KEY, JSON.stringify(state)); }
 
 // ── LOGIN ──
-function login(){
-  const pw = document.getElementById('pw').value;
-  if(pw === state.password){
+function login() {
+  if(document.getElementById('pw').value === state.password) {
     document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('admin-screen').style.display = 'flex';
-    document.getElementById('admin-screen').style.flexDirection = 'column';
-    loadSettingsUI();
-    renderFaqs();
-    updateStats();
-  } else {
-    document.getElementById('login-err').style.display = 'block';
-  }
+    const as = document.getElementById('admin-screen');
+    as.style.display = 'flex'; as.style.flexDirection = 'column';
+    loadSettingsUI(); loadAllData();
+  } else { document.getElementById('login-err').style.display = 'block'; }
 }
-function logout(){
+function logout() {
   document.getElementById('admin-screen').style.display = 'none';
   document.getElementById('login-screen').style.display = 'flex';
   document.getElementById('pw').value = '';
 }
 
 // ── NAV ──
-function showPage(name){
+function showPage(name) {
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
   document.getElementById('page-'+name).classList.add('active');
   document.getElementById('nav-'+name).classList.add('active');
+  if(name==='logs') loadLogs();
 }
 
-// ── STATS ──
-function updateStats(){
-  const total = state.faqs.length;
-  const active = state.faqs.filter(f=>f.status==='ok').length;
-  document.getElementById('stat-faq').textContent = total;
-  document.getElementById('stat-active').textContent = active;
-  document.getElementById('stat-tests').textContent = state.testCount;
-  document.getElementById('faq-count-badge').textContent = 'FAQ '+total+'件';
+// ── DATA LOAD ──
+async function loadAllData() {
+  await loadFaqs();
+  await updateStats();
+}
+
+async function loadFaqs() {
+  try {
+    allFaqs = await sbGet('faqs');
+    renderFaqs();
+    document.getElementById('faq-count-badge').textContent = 'FAQ ' + allFaqs.length + '件';
+  } catch(e) { toast('⚠️ FAQ読み込みエラー'); }
+}
+
+async function loadLogs() {
+  try {
+    allLogs = await sbGet('question_logs', '&order=id.desc&limit=200');
+    renderLogs();
+  } catch(e) { toast('⚠️ ログ読み込みエラー'); }
+}
+
+async function updateStats() {
+  document.getElementById('stat-faq').textContent = allFaqs.length;
+  document.getElementById('stat-active').textContent = allFaqs.filter(f=>f.status==='ok').length;
+  try {
+    const cnt = await sbCount('question_logs');
+    document.getElementById('stat-logs').textContent = cnt;
+  } catch(e) {}
+}
+
+// ── FAQ RENDER ──
+function renderFaqs(keyword='') {
+  const list = document.getElementById('faq-list');
+  const filtered = keyword
+    ? allFaqs.filter(f=>(f.question||'').includes(keyword)||(f.answer||'').includes(keyword))
+    : allFaqs;
+  if(!filtered.length) { list.innerHTML='<div style="text-align:center;padding:32px;color:var(--muted);">FAQが登録されていません</div>'; return; }
+  list.innerHTML = filtered.map(f => {
+    const bc = f.status==='ok'?'ok':f.status==='warn'?'warn':'off';
+    const bl = f.status==='ok'?'✅ 有効':f.status==='warn'?'△ 要確認':'非公開';
+    return `<div class="faq-item">
+      <div class="faq-item-head">
+        <div class="faq-q">Q. ${esc(f.question)}</div>
+        <div style="display:flex;gap:6px;flex-shrink:0;">
+          <span class="badge ${bc}">${bl}</span>
+          ${f.category?`<span class="badge off">${esc(f.category)}</span>`:''}
+        </div>
+      </div>
+      <div class="faq-a">${esc(f.answer)}</div>
+      <div class="faq-actions">
+        <button class="faq-edit-btn" onclick="openModal(${f.id})">編集</button>
+        <button class="faq-del-btn" onclick="deleteFaq(${f.id})">削除</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── LOG RENDER ──
+function renderLogs() {
+  const clientFilter = document.getElementById('log-filter-client')?.value.toLowerCase() || '';
+  const qFilter = document.getElementById('log-filter-q')?.value.toLowerCase() || '';
+  const filtered = allLogs.filter(l =>
+    (!clientFilter || (l.client_id||'').toLowerCase().includes(clientFilter)) &&
+    (!qFilter || (l.question||'').toLowerCase().includes(qFilter))
+  );
+  const tbody = document.getElementById('log-body');
+  if(!filtered.length) { tbody.innerHTML='<tr><td colspan="4" style="text-align:center;padding:20px;color:var(--muted);">ログがありません</td></tr>'; return; }
+  tbody.innerHTML = filtered.map(l => `<tr>
+    <td style="white-space:nowrap;font-size:11px;">${(l.created_at||'').slice(0,16).replace('T',' ')}</td>
+    <td><span class="client-badge">${esc(l.client_id||'unknown')}</span></td>
+    <td>${esc(l.question||'')}</td>
+    <td style="color:var(--muted);">${esc((l.answer||'').slice(0,80))}${(l.answer||'').length>80?'…':''}</td>
+  </tr>`).join('');
+}
+
+// ── FAQ CRUD ──
+function openModal(id) {
+  editFaqId = id === -1 ? null : id;
+  document.getElementById('modal-title').textContent = editFaqId ? 'FAQ を編集' : 'FAQ を追加';
+  if(editFaqId) {
+    const f = allFaqs.find(x=>x.id===id);
+    document.getElementById('modal-q').value = f.question||'';
+    document.getElementById('modal-a').value = f.answer||'';
+    document.getElementById('modal-cat').value = f.category||'';
+    document.getElementById('modal-status').value = f.status||'ok';
+  } else {
+    document.getElementById('modal-q').value='';
+    document.getElementById('modal-a').value='';
+    document.getElementById('modal-cat').value='';
+    document.getElementById('modal-status').value='ok';
+  }
+  document.getElementById('modal-bg').classList.add('open');
+}
+function closeModal() { document.getElementById('modal-bg').classList.remove('open'); }
+
+async function saveModal() {
+  const q = document.getElementById('modal-q').value.trim();
+  const a = document.getElementById('modal-a').value.trim();
+  if(!q||!a) { toast('質問と回答を入力してください'); return; }
+  const data = { question:q, answer:a, category:document.getElementById('modal-cat').value, status:document.getElementById('modal-status').value };
+  try {
+    if(editFaqId) { await sbUpdate('faqs', editFaqId, data); toast('✅ FAQを更新しました'); }
+    else { await sbInsert('faqs', data); toast('✅ FAQを追加しました'); }
+    closeModal(); await loadFaqs(); updateStats();
+  } catch(e) { toast('⚠️ 保存に失敗しました'); }
+}
+
+async function deleteFaq(id) {
+  if(!confirm('このFAQを削除しますか？')) return;
+  try { await sbDelete('faqs', id); toast('削除しました'); await loadFaqs(); updateStats(); }
+  catch(e) { toast('⚠️ 削除に失敗しました'); }
+}
+
+async function registerCorrection() {
+  const q = document.getElementById('corr-q').value.trim();
+  const a = document.getElementById('corr-good').value.trim();
+  if(!q||!a) { toast('質問と正しい回答を入力してください'); return; }
+  try {
+    await sbInsert('faqs', { question:q, answer:a, category:'修正登録', status:'ok' });
+    toast('✅ FAQに登録しました');
+    document.getElementById('corr-q').value='';
+    document.getElementById('corr-bad').value='';
+    document.getElementById('corr-good').value='';
+    await loadFaqs(); updateStats();
+  } catch(e) { toast('⚠️ 登録に失敗しました: ' + e.message); }
 }
 
 // ── TEST CHAT ──
-function buildSystem(){
-  const company = state.company;
-  let sys = state.prompt.replace('{company}', company);
-  const activeFaqs = state.faqs.filter(f=>f.status==='ok');
-  if(activeFaqs.length > 0){
-    sys += '\n\n【FAQ・正誤表（最優先で参照）】\n' + activeFaqs.map(f=>`Q: ${f.q}\nA: ${f.a}`).join('\n\n');
-  }
+function buildSystem() {
+  let sys = state.prompt;
+  const active = allFaqs.filter(f=>f.status==='ok');
+  if(active.length) sys += '\n\n【FAQ・正誤表（最優先）】\n' + active.map(f=>`Q: ${f.question}\nA: ${f.answer}`).join('\n\n');
   return sys;
 }
 
-function addBubble(role, html){
+const PRICE_HTML = `<div style="background:#e8f0fb;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;"><table style="width:100%;border-collapse:collapse;"><thead><tr><th style="background:#0a2e5c;color:white;padding:5px 8px;text-align:left;font-size:11px;">プラン</th><th style="background:#0a2e5c;color:white;padding:5px 8px;font-size:11px;">月額</th><th style="background:#0a2e5c;color:white;padding:5px 8px;font-size:11px;">向け</th></tr></thead><tbody><tr><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;font-weight:600;">ライト</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">¥50,000</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">お試し（1職種1媒体）</td></tr><tr style="background:rgba(255,255,255,.55);"><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;font-weight:600;">スタンダード</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">¥100,000</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">採用業務を幅広く</td></tr><tr><td style="padding:5px 8px;font-weight:600;">プレミアム</td><td style="padding:5px 8px;">¥300,000</td><td style="padding:5px 8px;">専門的な採用まで</td></tr></tbody></table><p style="font-size:10px;color:#5a7aaa;margin-top:5px;">※ 初期費用0円・最低3ヶ月契約 / rikuru@support.co.jp</p></div>`;
+
+function addBubble(role, html) {
   const area = document.getElementById('chat-msgs');
   const d = document.createElement('div'); d.className = 'msg ' + role;
   d.innerHTML = `<div class="av ${role}">${role==='b'?'AI':'You'}</div><div class="bbl">${html}</div>`;
   area.appendChild(d); area.scrollTop = area.scrollHeight;
 }
-function showTyping(){
+function showTyping() {
   const area = document.getElementById('chat-msgs');
   const d = document.createElement('div'); d.className='msg b'; d.id='typing';
   d.innerHTML=`<div class="av b">AI</div><div class="bbl"><div class="typing"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div></div>`;
   area.appendChild(d); area.scrollTop = area.scrollHeight;
 }
-function rmTyping(){ const t=document.getElementById('typing'); if(t) t.remove(); }
+function rmTyping() { const t=document.getElementById('typing'); if(t) t.remove(); }
 
-const PRICE_HTML = `<div style="background:#e8f0fb;border-radius:8px;padding:10px;margin-top:8px;font-size:12px;"><table style="width:100%;border-collapse:collapse;"><thead><tr><th style="background:#0a2e5c;color:white;padding:5px 8px;text-align:left;font-size:11px;border-radius:4px 0 0 0;">プラン</th><th style="background:#0a2e5c;color:white;padding:5px 8px;text-align:left;font-size:11px;">月額費用</th><th style="background:#0a2e5c;color:white;padding:5px 8px;text-align:left;font-size:11px;">こんな施設向け</th><th style="background:#0a2e5c;color:white;padding:5px 8px;text-align:left;font-size:11px;border-radius:0 4px 0 0;">対応職種・媒体</th></tr></thead><tbody><tr><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;font-weight:600;">ライト</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">¥50,000/月</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">お試しで始めたい施設様</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">1職種1媒体のみ</td></tr><tr style="background:rgba(255,255,255,.55);"><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;font-weight:600;">スタンダード</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">¥100,000/月</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">採用業務を幅広く任せたい施設様</td><td style="padding:5px 8px;border-bottom:1px solid #c5d8f5;">複数職種・媒体対応</td></tr><tr><td style="padding:5px 8px;font-weight:600;">プレミアム</td><td style="padding:5px 8px;">¥300,000/月</td><td style="padding:5px 8px;">より専門的な採用業務を任せたい施設様</td><td style="padding:5px 8px;">全業務フルサポート</td></tr></tbody></table><p style="font-size:10px;color:#5a7aaa;margin-top:6px;">※ 初期費用0円・最低3ヶ月契約。全プランで採用課題の洗い出しから入社前フォローまで対応。詳細はお問い合わせください（rikuru@support.co.jp）</p></div>`;
-
-async function testSend(){
+async function testSend() {
   const el = document.getElementById('chat-input');
   const t = el.value.trim(); if(!t) return;
   el.value = '';
   addBubble('u', t);
   document.getElementById('corr-q').value = t;
   chatHistory.push({role:'user', content:t});
-  state.testCount++;
-  updateStats();
   showTyping();
-
-  if(!state.apiKey){
-    rmTyping();
-    addBubble('b', '⚠️ APIキーが未設定です。「API・Bot設定」からOpenAI APIキーを入力してください。');
-    return;
-  }
-  try{
+  if(!state.apiKey) { rmTyping(); addBubble('b','⚠️ APIキーが未設定です。「API・Bot設定」から設定してください。'); return; }
+  try {
     const res = await fetch('https://api.openai.com/v1/chat/completions',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Authorization':'Bearer '+state.apiKey},
+      method:'POST', headers:{'Content-Type':'application/json','Authorization':'Bearer '+state.apiKey},
       body: JSON.stringify({model:state.model, messages:[{role:'system',content:buildSystem()},...chatHistory], max_tokens:600, temperature:0.35})
     });
     const d = await res.json(); rmTyping();
     if(d.error){ addBubble('b','⚠️ '+d.error.message); return; }
     let reply = d.choices[0].message.content;
     chatHistory.push({role:'assistant', content:reply});
-    logQuestion(t, reply);
+    // ログ記録
+    sbInsert('question_logs', { question:t, answer:reply, client_id:'admin-test', page_url:location.href }).catch(()=>{});
     let html = reply.replace(/\n/g,'<br>');
     if(reply.includes('[TABLE]')||/料金|費用|プラン/i.test(t)) html = html.replace('[TABLE]','') + PRICE_HTML;
     addBubble('b', html);
     document.getElementById('corr-bad').value = reply;
-  }catch(e){ rmTyping(); addBubble('b','⚠️ 接続エラーが発生しました。'); }
-}
-
-function registerCorrection(){
-  const q = document.getElementById('corr-q').value.trim();
-  const a = document.getElementById('corr-good').value.trim();
-  if(!q||!a){ toast('質問と正しい回答を入力してください'); return; }
-  const id = Date.now();
-  state.faqs.unshift({id, q, a, cat:'修正登録', status:'ok'});
-  // localStorageに保存
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  // スプレッドシートに即時書き込み
-  pushFaqs();
-  renderFaqs(); updateStats();
-  document.getElementById('corr-q').value='';
-  document.getElementById('corr-bad').value='';
-  document.getElementById('corr-good').value='';
-  toast('FAQに登録しました。スプレッドシートにも保存しています...');
-}
-
-// ── FAQ ──
-function renderFaqs(keyword=''){
-  const list = document.getElementById('faq-list');
-  const filtered = keyword
-    ? state.faqs.filter(f=>f.q.includes(keyword)||f.a.includes(keyword))
-    : state.faqs;
-  if(filtered.length===0){
-    list.innerHTML='<div style="text-align:center;padding:32px;color:var(--muted);font-size:13px;">FAQが登録されていません</div>';
-    return;
-  }
-  list.innerHTML = filtered.map((f,i)=>{
-    const realIdx = state.faqs.indexOf(f);
-    const badgeClass = f.status==='ok'?'ok':f.status==='warn'?'warn':'off';
-    const badgeLabel = f.status==='ok'?'✅ 有効':f.status==='warn'?'△ 要確認':'非公開';
-    return `<div class="faq-item">
-      <div class="faq-item-head">
-        <div class="faq-q">Q. ${f.q}</div>
-        <div class="faq-badges">
-          <span class="badge ${badgeClass}">${badgeLabel}</span>
-          ${f.cat?`<span class="badge off">${f.cat}</span>`:''}
-        </div>
-      </div>
-      <div class="faq-a">${f.a}</div>
-      <div class="faq-actions">
-        <button class="faq-edit-btn" onclick="openModal(${realIdx})">編集</button>
-        <button class="faq-del-btn" onclick="deleteFaq(${realIdx})">削除</button>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-function filterFaqs(kw){ renderFaqs(kw); }
-
-function deleteFaq(i){
-  if(!confirm('このFAQを削除しますか？')) return;
-  state.faqs.splice(i,1);
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  pushFaqs();
-  renderFaqs(); updateStats();
-  toast('削除しました。スプレッドシートにも反映中...');
-}
-
-// ── MODAL ──
-function openModal(i){
-  editIdx = i;
-  document.getElementById('modal-title').textContent = i===-1 ? 'FAQ を追加' : 'FAQ を編集';
-  if(i===-1){
-    document.getElementById('modal-q').value='';
-    document.getElementById('modal-a').value='';
-    document.getElementById('modal-cat').value='';
-    document.getElementById('modal-status').value='ok';
-  } else {
-    const f = state.faqs[i];
-    document.getElementById('modal-q').value=f.q;
-    document.getElementById('modal-a').value=f.a;
-    document.getElementById('modal-cat').value=f.cat||'';
-    document.getElementById('modal-status').value=f.status;
-  }
-  document.getElementById('modal-bg').classList.add('open');
-}
-function closeModal(){ document.getElementById('modal-bg').classList.remove('open'); }
-function saveModal(){
-  const q = document.getElementById('modal-q').value.trim();
-  const a = document.getElementById('modal-a').value.trim();
-  if(!q||!a){ toast('質問と回答を入力してください'); return; }
-  const entry = {id:Date.now(), q, a, cat:document.getElementById('modal-cat').value, status:document.getElementById('modal-status').value};
-  if(editIdx===-1) state.faqs.push(entry);
-  else state.faqs[editIdx] = {...state.faqs[editIdx], ...entry};
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  pushFaqs();
-  renderFaqs(); updateStats(); closeModal();
-  toast(editIdx===-1?'FAQを追加しました。スプレッドシートにも保存中...':'FAQを更新しました。スプレッドシートにも保存中...');
+  } catch(e) { rmTyping(); addBubble('b','⚠️ 接続エラーが発生しました。'); }
 }
 
 // ── SETTINGS ──
-function loadSettingsUI(){
+function loadSettingsUI() {
   document.getElementById('api-key-input').value = state.apiKey||'';
   document.getElementById('model-select').value = state.model||'gpt-4o-mini';
   document.getElementById('company-input').value = state.company||'';
@@ -598,110 +585,46 @@ function loadSettingsUI(){
   document.getElementById('prompt-input').value = state.prompt||'';
   checkApi();
 }
-function checkApi(){
+function checkApi() {
   const k = document.getElementById('api-key-input').value.trim();
   const ok = k.startsWith('sk-')&&k.length>20;
   document.getElementById('api-dot').className='api-dot'+(ok?' ok':'');
-  document.getElementById('api-status-txt').textContent = ok?'設定済み':k?'形式を確認してください':'未設定';
+  document.getElementById('api-status-txt').textContent = ok?'設定済み':k?'形式を確認':'未設定';
 }
-function saveSettings(){
+function saveSettings() {
   state.apiKey = document.getElementById('api-key-input').value.trim();
   state.model = document.getElementById('model-select').value;
   state.company = document.getElementById('company-input').value;
   state.botName = document.getElementById('botname-input').value;
   state.prompt = document.getElementById('prompt-input').value;
-  saveState();
-  toast('設定を保存しました');
+  saveLocalState(); toast('✅ 設定を保存しました');
 }
 
 // ── PASSWORD ──
-function changePw(){
-  const cur = document.getElementById('cur-pw').value;
-  const nw = document.getElementById('new-pw').value;
-  const nw2 = document.getElementById('new-pw2').value;
-  const msg = document.getElementById('pw-msg');
+function changePw() {
+  const cur=document.getElementById('cur-pw').value;
+  const nw=document.getElementById('new-pw').value;
+  const nw2=document.getElementById('new-pw2').value;
+  const msg=document.getElementById('pw-msg');
   msg.style.display='block';
-  if(cur!==state.password){ msg.style.color='var(--red)'; msg.textContent='現在のパスワードが違います'; return; }
-  if(nw.length<6){ msg.style.color='var(--red)'; msg.textContent='6文字以上で設定してください'; return; }
-  if(nw!==nw2){ msg.style.color='var(--red)'; msg.textContent='パスワードが一致しません'; return; }
-  state.password=nw; saveState();
-  msg.style.color='var(--green-fg)'; msg.textContent='パスワードを変更しました';
-  document.getElementById('cur-pw').value='';
-  document.getElementById('new-pw').value='';
-  document.getElementById('new-pw2').value='';
+  if(cur!==state.password){msg.style.color='var(--red)';msg.textContent='現在のパスワードが違います';return;}
+  if(nw.length<6){msg.style.color='var(--red)';msg.textContent='6文字以上で設定してください';return;}
+  if(nw!==nw2){msg.style.color='var(--red)';msg.textContent='パスワードが一致しません';return;}
+  state.password=nw; saveLocalState();
+  msg.style.color='var(--green-fg)';msg.textContent='パスワードを変更しました';
 }
 
-// ── EXPORT ──
-function exportFaqs(){
-  const data = JSON.stringify(state.faqs, null, 2);
-  const blob = new Blob([data], {type:'application/json'});
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'faq_export.json';
-  a.click();
-  toast('FAQをエクスポートしました');
-}
-
-// ── TOAST ──
+// ── UTILS ──
+function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 function toast(msg){
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'), 2500);
-}
-
-
-// ── GAS連携（GET専用・CORS完全回避）──
-const GAS_URL = 'https://script.google.com/macros/s/AKfycbxZlWZmxNp_JtrV5qOtuHE23RqL8_Aslh8TfuNFvh7sJnJUmbDzT0jplD4jSsaady4V9w/exec';
-
-async function fetchFaqs(){
-  try{
-    const res = await fetch(GAS_URL + '?action=getFaqs');
-    const d = await res.json();
-    if(d && d.faqs && d.faqs.length > 0){
-      state.faqs = d.faqs;
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      renderFaqs();
-      updateStats();
-      toast('✅ FAQを読み込みました（' + d.faqs.length + '件）');
-    }
-  }catch(e){ console.warn('GAS fetch failed:', e); }
-}
-
-async function pushFaqs(){
-  try{
-    // FAQを10件ずつチャンクに分割して送信
-    const CHUNK = 10;
-    const faqs = state.faqs;
-    for(let i = 0; i < faqs.length; i += CHUNK){
-      const chunk = faqs.slice(i, i + CHUNK);
-      const isFirst = i === 0;
-      const payload = encodeURIComponent(JSON.stringify({
-        action: 'saveFaqs',
-        faqs: chunk,
-        offset: i,
-        isFirst: isFirst,
-        total: faqs.length
-      }));
-      const res = await fetch(GAS_URL + '?data=' + payload);
-      await res.json();
-    }
-    toast('✅ スプレッドシートに保存しました（' + state.faqs.filter(f=>f.status==='ok').length + '件）');
-  }catch(e){
-    console.warn('GAS push failed:', e);
-    toast('⚠️ スプレッドシートへの保存に失敗しました');
-  }
-}
-
-async function logQuestion(question, answer){
-  try{
-    const payload = encodeURIComponent(JSON.stringify({action:'logQuestion', log:{question, answer, page:'admin-test'}}));
-    await fetch(GAS_URL + '?data=' + payload);
-  }catch(e){ console.warn('GAS log failed:', e); }
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2500);
 }
 
 // ── INIT ──
-loadState();
-document.getElementById('modal-bg').addEventListener('click', function(e){ if(e.target===this) closeModal(); });
+loadLocalState();
+document.getElementById('modal-bg').addEventListener('click',function(e){if(e.target===this)closeModal();});
 </script>
 </body>
 </html>
