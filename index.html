@@ -669,14 +669,23 @@ async function fetchFaqs(){
 
 async function pushFaqs(){
   try{
-    const payload = encodeURIComponent(JSON.stringify({action:'saveFaqs', faqs:state.faqs}));
-    const res = await fetch(GAS_URL + '?data=' + payload);
-    const d = await res.json();
-    if(d && d.success){
-      toast('✅ スプレッドシートに保存しました（' + state.faqs.filter(f=>f.status==='ok').length + '件）');
-    } else {
-      toast('⚠️ 保存に失敗しました');
+    // FAQを10件ずつチャンクに分割して送信
+    const CHUNK = 10;
+    const faqs = state.faqs;
+    for(let i = 0; i < faqs.length; i += CHUNK){
+      const chunk = faqs.slice(i, i + CHUNK);
+      const isFirst = i === 0;
+      const payload = encodeURIComponent(JSON.stringify({
+        action: 'saveFaqs',
+        faqs: chunk,
+        offset: i,
+        isFirst: isFirst,
+        total: faqs.length
+      }));
+      const res = await fetch(GAS_URL + '?data=' + payload);
+      await res.json();
     }
+    toast('✅ スプレッドシートに保存しました（' + state.faqs.filter(f=>f.status==='ok').length + '件）');
   }catch(e){
     console.warn('GAS push failed:', e);
     toast('⚠️ スプレッドシートへの保存に失敗しました');
